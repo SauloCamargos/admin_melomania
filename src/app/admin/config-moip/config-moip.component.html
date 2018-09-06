@@ -1,0 +1,111 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <i class="fa fa-sitemap"></i> Integrações
+            <small></small>
+        </h1>
+        <!-- <app-breadcrumb></app-breadcrumb> -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#moip" data-toggle="tab">Moip</a>
+                </li>
+                <!-- <li>
+                    <a href="#vimeo" data-toggle="tab">Vimeo</a>
+                </li> -->
+            </ul>
+            <div class="tab-content">
+                <div class="active tab-pane" id="moip">
+                    <app-loading [loading]="carregando"></app-loading>
+                    <div class="row" *ngIf="!carregando">
+                        <div class="col-md-8">
+                            <form (submit)="onSubmit(fMoip)" [formGroup]="fMoip">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="inputName" class=" control-label">Ambiente: *</label>
+                                            <select formControlName="moip_environments" name="moip_environments" class="form-control">
+                                                <option [value]="1">Desenvolvimento</option>
+                                                <option [value]="2">Produção</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="inputName" class=" control-label">Token sandbox:*</label>
+                                            <input type="text" class="form-control" formControlName="moip_tokenSandbox" name="moip_tokenSandbox">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="inputName" class=" control-label">Key sandbox:*</label>
+                                            <input type="text" class="form-control" formControlName="moip_keySandbox" name="moip_keySandbox">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="inputName" class=" control-label">Token ambiente de produção:*</label>
+                                            <input type="text" class="form-control" formControlName="moip_tokenProduction" name="moip_tokenProduction">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="inputName" class=" control-label">Key ambiente de produção:*</label>
+                                            <input type="text" class="form-control" formControlName="moip_keyProduction" name="moip_keyProduction">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group text-right">
+                                    <button type="submit" class="btn btn-danger" [disabled]="fMoip.invalid">Salvar</button>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <p class="help-block">
+                                                * Campos obrigatórios
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="vimeo">
+                    <app-loading [loading]="carregando"></app-loading>
+
+                    <div class="row" *ngIf="!carregando">
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /.tab-content -->
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+
+<!-- vimeo_clienteId=bd6283ae802d784ab6323b9108c0cad465aa53be
+vimeo_clienteSecret=dzyJv3SY2hVUE3VHqhp3KLA9Ir7dRZ+YPPRZ2QKKn+woZaWHDsw8II7I9Aii43TJFk6hM/UybYTMb58bgUwozv8hxYfiCh0PKnoffsHWx1xLW4CxpwO/F11wlD3DVRaz
+vimeo_token=57e52c4890194cdf472d5fe62f4077c2 -->

@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-12">
+        <ng-template ngFor let-ball let-index="index" [ngForOf]="ballsHandler">
+            <img class="ball-icon" (click)="toggleStatus(index)" [hidden]="ball.active == false" [src]="'/assets/img/balls_active/ball_'+ball.id+'.png'" alt="" srcset="">
+            <img class="ball-icon" (click)="toggleStatus(index)" [hidden]="ball.active == true" [src]="'/assets/img/balls_inactive/ball_'+ball.id+'.png'" alt="" srcset="">
+        </ng-template>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-right">
+
+        <button type="button" (click)="cancelEvent()" class="btn btn-danger margin">Cancelar</button>
+        <button type="button" (click)="confirmList()" class="btn btn-primary">Confirmar</button>
+
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container app-login">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <!-- <img class="img-responsive login-brand" src="assets/img/logo_white.png" alt="" srcset=""> -->
+                    <h1 class="text-center">
+                        EAD Edon
+                        <br>
+                        <small>Área Restrita(Recuperação de senha)</small>
+                    </h1>
+
+                    <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="errorCredentials">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> Usuário ou senha inválidos.
+                    </div>
+                    <form [formGroup]="f" novalidate>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="form-group has-feedback" [ngClass]="{'has-success': f.controls['email'].valid,
+              'has-error': f.controls['email'].invalid && (f.controls['email'].touched || f.controls['email'].dirty)}">
+                                <input type="email" formControlName="email" class="form-control" id="InputEmail" placeholder="Email">
+                                <span *ngIf="f.controls['email'].valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                                <span *ngIf="f.controls['email'].invalid && (f.controls['email'].touched || f.controls['email'].dirty)">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                                <span class="text-danger">E-mail inválido.</span>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <div class="text-right">
+                                    <a routerLink="/auth/login">
+                                      Realizar login
+                                  </a>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-default btn-block" [disabled]="f.invalid" (click)="onSubmit()">Entrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

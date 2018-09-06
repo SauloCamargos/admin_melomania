@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header with-border">
+                <h3 class="box-title">&nbsp;</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-wrench"></i></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a routerLink="./../create">Adicionar jogo</a></li>
+                            <!-- <li><a href="#">Another action</a></li> -->
+                            <!-- <li><a href="#">Something else here</a></li> -->
+                            <!-- <li class="divider"></li> -->
+                            <!-- <li><a href="#">Separated link</a></li> -->
+                        </ul>
+                    </div>
+                    <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+                </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Nome do concurso</th>
+                            <th>Data do sorteio</th>
+                            <th>Jogo</th>
+                            <th>Valor da taxa adm.</th>
+                            <th>Valor da taxa adm.</th>
+                            <th>Número de sorteios</th>
+                            <th style="width: 70px"></th>
+                        </tr>
+                        <tr *ngFor="let contest of contests">
+                            <td>{{contest.id}}</td>
+                            <td>{{contest.name}}</td>
+                            <td>{{contest.draw_date | date: 'dd/MM/yyyy HH:mm' }}</td>
+                            <td>{{contest.game_name}}</td>
+                            <td>
+                                {{contest.price | currency:'BRL':'R$ ':'1.2-2'}}
+                            </td>
+                            <td>
+                                {{contest.admin_tax | currency:'BRL':'R$ ':'1.2-2'}}
+                            </td>
+                            <td>
+                                {{contest.lotteries_number}}
+                            </td>
+                            <td>
+                                <a [routerLink]="['/admin/contests',contest.id]" class="btn btn-xs btn-info btn-flat">
+                                    <i class="fa fa-list"></i>
+                                </a>
+                                <button (click)="remove(contest.id)" type="button" class="btn btn-xs btn-danger btn-flat">
+                                <i class="fa fa-times"></i>
+                            </button>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+                <app-pagination *ngIf="!carregando" [config]="configPaginator" (activatedPage)="getData($event)"></app-pagination>
+            </div>
+        </div>
+    </div>
+</div>

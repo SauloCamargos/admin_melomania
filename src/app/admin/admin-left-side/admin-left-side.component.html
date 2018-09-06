@@ -1,0 +1,81 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+
+            <li routerLinkActive="active">
+                <a href="#" [routerLink]="['/admin/dashboard']">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="header">Gerenciamento</li>
+            <!-- <li routerLinkActive="active">
+                <a href="#" [routerLink]="['/admin/users/list']">
+                    <i class="fa fa-users"></i>
+                    <span>Usuários</span>
+                </a>
+            </li> -->
+            <li routerLinkActive="active">
+                <a href="#" [routerLink]="['/admin/games/list']">
+                    <i class="fa fa-gamepad"></i>
+                    <span>Jogos</span>
+                </a>
+            </li>
+            <li routerLinkActive="active">
+                <a href="#" [routerLink]="['/admin/contests/list']">
+                    <i class="fa fa-ticket"></i>
+                    <span>Concursos</span>
+                </a>
+            </li>
+            <li class="header">Configurações</li>
+            <!-- <li routerLinkActive="active">
+                <a href="#">
+                    <i class="fa fa-credit-card"></i>
+                    <span>Pagamento</span>
+                </a>
+            </li> -->
+            <!-- <li routerLinkActive="active">
+                <a href="#">
+                    <i class="fa fa-cogs"></i>
+                    <span>Curso</span>
+                </a>
+            </li> -->
+
+            <li routerLinkActive="active">
+                <a href="#" [routerLink]="['/admin/config-moip']">
+                    <i class="fa fa-sitemap"></i>
+                    <span>Moip</span>
+                </a>
+            </li>
+            <li class="treeview" *ngIf="false">
+                <a href="#">
+                    <i class="fa fa-lock"></i>
+                    <span>Acessos</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li routerLinkActive="active">
+                        <a href="#" [routerLink]="['/admin/users/list']">
+                            <i class="fa fa-users"></i> Usuários</a>
+                    </li>
+                    <li routerLinkActive="active">
+
+                        <a href="#" [routerLink]="['/admin/users/roles']">
+                            <i class="fa fa-id-badge"></i> Perfis</a>
+                    </li>
+                    <li routerLinkActive="active">
+                        <a href="#" [routerLink]="['/admin/users/permisson']">
+                            <i class="fa fa-unlock"></i> Permissões</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

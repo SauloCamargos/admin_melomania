@@ -1,0 +1,8 @@
+<i class="fa fa-spinner fa-pulse fa-3x fa-fw" *ngIf="carregando"></i>
+
+<ol class="breadcrumb" *ngIf="!carregando">
+    <li><a routerLink=""><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li *ngFor="let breadcrumb of breadcrumbs">
+        <a [routerLink]="[breadcrumb.url, breadcrumb.params]">{{breadcrumb.label}}</a>
+    </li>
+</ol>

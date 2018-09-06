@@ -1,0 +1,51 @@
+<div class="container app-login">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <!-- <img class="img-responsive login-brand" src="assets/img/logo_white.png" alt="" srcset=""> -->
+                    <h1 class="text-center">
+                        EAD Edon
+                        <br>
+                        <small>Área Restrita(Login)</small>
+                    </h1>
+
+                    <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="errorCredentials">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> Usuário ou senha inválidos.
+                    </div>
+                    <form [formGroup]="f" (ngSubmit)="setPassword($event)" novalidate>
+                        <div class="col-md-9 col-md-offset-1">
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" formControlName="email" name="email" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>Nova senha</label>
+                                    <input type="password" formControlName="password" name="password" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>Confirme nova senha</label>
+                                    <input type="password" formControlName="password_confirmation" name="password_confirmation" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-default btn-block">Redefinir senha</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

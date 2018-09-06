@@ -1,0 +1,10 @@
+<ul class="pagination pagination-sm no-margin pull-right">
+    <li *ngIf="config?.first_page_url" (click)="setPage(config?.params_first_page.page,config?.params_first_page.qtd)"><a href="javascript:void(0)"><i class="fa fa-angle-double-left"></i></a></li>
+    <li *ngIf="config?.prev_page_url" (click)="setPage(config?.params_prev_page.page,config?.params_prev_page.qtd)"><a href="javascript:void(0)"><i class="fa fa-angle-left"></i></a></li>
+
+    <li *ngFor="let page of getPages()" (click)="setPage(page.page_number)" [ngClass]="{'active': hasCurrent(page.page_number)}"><a href="javascript:void(0)">{{page.page_number}}</a></li>
+
+
+    <li *ngIf="config?.next_page_url" (click)="setPage(config?.params_next_page.page,config?.params_next_page.qtd)"><a href="javascript:void(0)"><i class="fa fa-angle-right"></i></a></li>
+    <li *ngIf="config?.last_page_url" (click)="setPage(config?.params_last_page.page,config?.params_last_page.qtd)"><a href="javascript:void(0)"><i class="fa fa-angle-double-right"></i></a></li>
+</ul>

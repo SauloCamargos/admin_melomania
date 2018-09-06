@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="box ">
+            <div class="box-header with-border">
+                <h3 class="box-title">Dados do jogo</h3>
+            </div>
+            <form [formGroup]="f" (ngSubmit)="onSubmit()">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="game_name" class="control-label">Nome</label>
+                        <input type="text" formControlName="name" name="name" class="form-control" id="game_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="state_id" class="control-label">Estado:</label>
+                        <select formControlName="state_id" name="state_id" class="form-control" id="state_id">
+                          <option [value]="null">Selecione uma opção...</option>
+                          <option [value]="state.id" *ngFor="let state of states">{{state.name}}</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="box-footer text-right">
+                    <a routerLink="../list" class="btn btn-danger margin btn-flat">Cancelar</a>
+                    <button type="submit" class="btn btn-success margin btn-flat" [disabled]="f.invalid">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

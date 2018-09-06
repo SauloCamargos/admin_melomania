@@ -1,0 +1,87 @@
+    .bouncingballs {
+        display: flex;
+        align-items: baseline;
+        width: 250px;
+        margin-top: 80px;
+    }
+    
+    .bouncingballs>img {
+        width: 10%;
+        border-radius: 100%;
+        background-size: cover;
+        animation: bounce 1.5s;
+        animation-iteration-count: infinite;
+        position: relative;
+        float: left;
+        display: block;
+        margin: -21px transform-origin: center top;
+    }
+    
+    .bouncingballs img:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+    
+    .bouncingballs img:nth-child(2) {
+        animation-delay: 0.3s;
+    }
+    
+    .bouncingballs img:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+    
+    .bouncingballs img:nth-child(4) {
+        animation-delay: 0.5s;
+    }
+    
+    .bouncingballs img:nth-child(5) {
+        animation-delay: 0.6s;
+    }
+    
+    .bouncingballs img:nth-child(6) {
+        animation-delay: 0.7s;
+    }
+    
+    .bouncingballs img:nth-child(7) {
+        animation-delay: 0.8s;
+    }
+    
+    .bouncingballs img:nth-child(8) {
+        animation-delay: 0.9s;
+    }
+    
+    .bouncingballs img:nth-child(9) {
+        animation-delay: 1s;
+    }
+    
+    @keyframes bounce {
+        0% {
+            bottom: 0px;
+            -webkit-animation-timing-function: ease-out;
+        }
+        25% {
+            bottom: 30px;
+            -webkit-animation-timing-function: ease-in;
+        }
+        50% {
+            bottom: 0px;
+            -webkit-animation-timing-function: ease-out;
+        }
+        75% {
+            bottom: -30px;
+            -webkit-animation-timing-function: ease-in;
+        }
+        100% {
+            bottom: 0;
+            -webkit-animation-timing-function: ease-out;
+        }
+    }
+    
+    .Aligner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    body {
+        background: -webkit-gradient(linear, right top, left bottom, from(#1E68C1), to(#001C3D)) fixed;
+    }

@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+.btn-success.disabled,
+.btn-success.disabled,
+.btn-success.disabled,
+.btn-success[disabled],
+.btn-success[disabled],
+.btn-success[disabled],
+fieldset[disabled] .btn-success,
+fieldset[disabled] .btn-success,
+fieldset[disabled] .btn-success {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.main-header .logo .logo-lg img {
+    max-width: 120px;
+}
+
+span.logo-mini img {
+    max-width: 45px;
+}

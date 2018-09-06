@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="box ">
+            <div class="box-header with-border">
+                <h3 class="box-title">Dados do jogo</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form [formGroup]="f" (ngSubmit)="onSubmit()">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="contest_name" class="control-label">Nome</label>
+                        <input type="text" formControlName="name" name="name" class="form-control" id="contest_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contest_game_id" class="control-label">Jogo</label>
+                        <select formControlName="game_id" name="game_id" class="form-control" id="contest_game_id">
+                          <option [value]="null">Selecione uma opção...</option>
+                          <option [value]="game.id" *ngFor="let game of games">{{game.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contest_price" class="control-label">Preço</label>
+                        <input type="text" formControlName="price" name="price" class="form-control" id="contest_price">
+                    </div>
+                    <div class="form-group">
+                        <label for="contest_admin_tax" class="control-label">Taxa administrativa</label>
+                        <input type="text" formControlName="admin_tax" name="admin_tax" class="form-control" id="contest_admin_tax">
+                    </div>
+                    <div class="form-group">
+                        <label for="contest_draw_date" class="control-label">Data do sorteio</label>
+                        <input type="datetime-local" formControlName="draw_date" name="draw_date" class="form-control" id="contest_draw_date">
+                    </div>
+                </div>
+                <div class="box-footer text-right">
+                    <a routerLink="../list" class="btn btn-danger margin btn-flat">Cancelar</a>
+                    <button type="submit" class="btn btn-success margin btn-flat" [disabled]="f.invalid">Salvar</button>
+                </div>
+                <!-- /.box-footer -->
+            </form>
+        </div>
+    </div>
+</div>
